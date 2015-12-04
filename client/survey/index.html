@@ -1,0 +1,45 @@
+<head>
+  <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<template name="SurveyList">
+<div class="container row">
+<div class="col s8 push-s2">
+  <ul class="collection ">
+{{#each surveys}}
+      <li class="collection-item avatar survey-to-update" name="{{_id}}">
+           <i class="material-icons circle green">question_answer</i>
+           <span class="title">{{TITLE}}</span>
+          <br/>
+             <p>{{DESCRIPTION}}</p>
+           <a href="#!" id="delete-survey" name="{{_id}}" class="secondary-content"><i class="material-icons">delete</i></a>
+
+      </li>
+{{/each}}
+  </ul>
+</div>
+</div>
+<!-- <div class="col s6"> -->
+        <!-- <div class="card-content"> -->
+          {{> SurveyCreate}}
+          <!-- {{> quickForm collection="Survey" doc=selectedSurvey  id="updateSurveyForm" type="update"}} -->
+        <!-- </div> -->
+        <!-- <div class="card-action"> -->
+     <!-- </div> -->
+<!-- </div> -->
+  <!--
+  <button id="button">my button</button> -->
+    <div id="create-survey" class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">add</i>
+        </a>
+        <!-- <ul>
+            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul> -->
+    </div>
+{{> SurveyUpdate data=this}}
+
+</template>

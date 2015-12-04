@@ -1,0 +1,12 @@
+<template name="testcases">
+    {{#autoForm collection="Cases" id="createCasesForm" type="insert"}}
+    <fieldset>
+        <legend>Add a Cases</legend>
+        {{> afQuickField name='SURVEY_ID'}}
+        {{> afQuickField name='LONG'}}
+        {{> afQuickField name='LAT'}}
+        {{> afQuickField name='ANSWERS'}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Create</button>
+    {{/autoForm}}
+</template>
