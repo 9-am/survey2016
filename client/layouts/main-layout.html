@@ -1,0 +1,19 @@
+<template name="MainLayout">
+<!-- <div class="container"> -->
+  <header>
+    {{> yield "header"}}
+  </header>
+
+  <aside>
+    {{> yield "aside"}}
+  </aside>
+
+  <article class="row">
+    {{> yield}}
+  </article>
+
+  <footer>
+    {{> yield "footer"}}
+  </footer>
+<!-- </div> -->
+</template>

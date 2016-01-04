@@ -1,0 +1,32 @@
+<template name="reports">
+  <div class="row container">
+    <table class="col s8 push-s2 responsive-table highlight">
+         <thead>
+           <tr>
+               <th data-field="id">ID</th>
+               <th data-field="name">Survey Name</th>
+               <th data-field="desc">Description</th>
+               <th data-field="author">Author</th>
+           </tr>
+         </thead>
+
+         <tbody>
+           {{#each surveys}}
+           <tr>
+               <td>
+                   <a href="{{_id}}">details</a>
+               </td>
+               <td>{{TITLE}}</td>
+               <td>{{DESCRIPTION}}</td>
+               <td>{{AUTHOR}}</td>
+           </tr>
+           {{/each}}
+         </tbody>
+       </table>
+  </div>
+  <!-- ######################################################  -->
+
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a  id="print" class="btn-floating btn-large waves-effect  pink"><i class="material-icons">print</i></a>
+  </div>
+</template>

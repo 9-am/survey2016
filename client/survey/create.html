@@ -1,0 +1,26 @@
+<template name="SurveyCreate">
+
+  <div id="modal1" class="modal modal-fixed-footer">
+    {{#autoForm collection="Survey" id="createSurveyForm" type="insert"}}
+    <div class="modal-content">
+
+<fieldset>
+    <legend>Add a Survey</legend>
+    {{> afQuickField name='EXP_DATE'}}
+    {{> afQuickField name='TITLE'}}
+    {{> afQuickField name='AUTHOR'}}
+    {{> afQuickField name='DESCRIPTION'}}
+    {{> afQuickField name='QUESTIONS'}}
+
+</fieldset>
+  </div>
+  <div class="modal-footer">
+    <!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a> -->
+    <button type="submit" class="btn btn-primary">Create</button>
+  </div>
+  {{/autoForm}}
+</div>
+
+    <!--</form>-->
+  <!--</div>-->
+</template>
