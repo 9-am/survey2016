@@ -6,10 +6,18 @@ Meteor.publish("SurveyList", function () {
 
     return Survey.find({});
 });
+//Meteor.publish("SurveyCases", function (surveyId){
+//   return Cases.find({SURVEY_ID: surveyId});
+//});
 Meteor.publish("CasesList", function () {
     return Cases.find();
 });
-
+Meteor.publish("CasesAnsList", function (surveyId, questionId) {
+   return Cases.find({SURVEY_ID: surveyId, QUESTION_ID: questionId});
+});
+Meteor.publish("Answers", function () {
+    return Cases.find({});
+});
 Meteor.publish('allSurvey', function () {
     //var currentUserId = this.userId();
     Counts.publish(this, 'totalSurvey', Survey.find({}));//AUTHOR: "Mohammed Matar"

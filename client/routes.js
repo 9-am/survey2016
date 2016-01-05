@@ -42,13 +42,13 @@ Router.route("/reports", function(){
   this.render("reports");
   this.render("footer", {to: "footer"});
 });
-Router.route("/reports/:survey", {name: "detailedReport",data: function(){var v = Cases.findOne({SURVEY_ID: this.params._id}); return v;}}, function(){
-  this.layout("MainLayout");
-  this.render("header", {to: "header"});
-  this.render("sidebar", {to: "aside"});
-  this.render("detailedReport");
-  this.render("footer", {to: "footer"});
-});
+//Router.route("/reports/:survey", {name: "detailedReport",data: function(){var v = Cases.findOne({SURVEY_ID: this.params._id}); return v;}}, function(){
+//  this.layout("MainLayout");
+//  this.render("header", {to: "header"});
+//  this.render("sidebar", {to: "aside"});
+//  this.render("detailedReport");
+//  this.render("footer", {to: "footer"});
+//});
 Router.route("/testcases", function(){
   this.layout("MainLayout");
   this.render("header", {to: "header"});

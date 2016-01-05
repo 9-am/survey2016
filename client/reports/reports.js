@@ -1,53 +1,36 @@
-
-
 Template.reports.helpers({
-  create: function(){
 
-  },
-  rendered: function(){
-    TEST_DATE =  function(args){
-      if(args <= moment(new Date)){
-        console.log("mo################################################!@@@@@@@@@@@@@@@@@@@@");
-        return true;
-      }else{
-        return false;
-      }//else
-    };
-  },
-  destroyed: function(){
+    survey: function () {
+        Meteor.subscribe('SurveyList');
+        return Survey.find().fetch();
+    },//survey
+    surveyCases: function (surveyId) {
+        Meteor.subscribe('CasesList', surveyId);
+        return Cases.find({SURVEY_ID: surveyId});
+    },
+    caseQuestions: function (surveyId) {
+        Meteor.subscribe('SurveyList');
+        questions = Survey.find({_id: surveyId}).fetch();
+        //forEach(questions as m){console.log(q)};
+        return questions['QUESTIONS'];
+    },
+    casesAns: function (surveyId, questionId) {
+        //surveyId = Template.parentData("_id");
+        Meteor.subscribe("CasesAnsList", questionId);
+        //console.log(questionId);
+        return Cases.find({SURVEY_ID: surveyId}, {ANSWERS: {QUESTION_ID: questionId}}).fetch();
+    },
+    Answers: function (surveyId, questionId) {
+        //surveyId = Template.parentData("_id");
+        Meteor.subscribe("Answers");
+        //console.log(questionId);
+        cases = Cases.find({SURVEY_ID: surveyId}, {ANSWERS: {QUESTION_ID: questionId}}).fetch();
+        console.log()
+        cases.forEach(function (myCase) {
+            console.log(myCase.QUESTION_ID);
 
-  },
-  surveys:  function() {
-    // body...
-    return    Survey.find({}).fetch();
-  },
-  //TEST_DATE: function(args){
-  //  if(args <= moment(new Date)){
-  //    console.log("mo################################################!@@@@@@@@@@@@@@@@@@@@");
-  //    return true;
-  //  }else{
-  //    return false;
-  //  }//else
-  //},
-  casesD: function(){
-    return Cases.findOne({ SURVEY_ID: survey_id }).fetch();
-  },
-  cases:   function () {
-    // body...
-    // var myarr = [], s = [], q = [], t = [];
-    // var cases = Cases.find({SURVEY_ID: id}).fetch();
-    // for (var casea in cases) {
-      // var survey = Survey.findOne({"_id": casea.SURVEY_ID});
-      //  t.push(survey.TITLE);
-      //  q.push(survey.)
-    // }
-    return Cases.find().count();
-  }
-});
-
-Template.reports.events({
-  "click #print": function(event, template){
-    event.preventDefault(event);
-     window.print();
-  }
+        })
+        //console.log(cases+"@#$");
+        return cases;
+    }
 });

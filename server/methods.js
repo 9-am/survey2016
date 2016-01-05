@@ -12,6 +12,5 @@ Meteor.methods({
   findCasesOfSurvey:  function (id) {
     // body...
     return Cases.find({"SURVEY_ID": id});
-
   }
 });

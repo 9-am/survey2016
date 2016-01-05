@@ -7,7 +7,7 @@
 <div class="col s8 push-s2">
   <ul class="collection ">
 {{#each surveys}}
-    {{#if TEST_DATE surveys.EXP_DATE}}
+    <!--#if TEST_DATE surveys.EXP_DATE}}-->
       <li class="collection-item avatar survey-to-update" name="{{_id}}">
            <i class="material-icons circle green">question_answer</i>
            <span class="title">{{TITLE}}</span>
@@ -16,7 +16,7 @@
            <a href="#!" id="delete-survey" name="{{_id}}" class="secondary-content"><i class="material-icons">delete</i></a>
 
       </li>
-        {{/if}}
+        <!--/if}}-->
 {{/each}}
   </ul>
 </div>

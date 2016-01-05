@@ -1,32 +1,40 @@
 <template name="reports">
-  <div class="row container">
-    <table class="col s8 push-s2 responsive-table highlight">
-         <thead>
-           <tr>
-               <th data-field="id">ID</th>
-               <th data-field="name">Survey Name</th>
-               <th data-field="desc">Description</th>
-               <th data-field="author">Author</th>
-           </tr>
-         </thead>
+    <div class="row">
+        <div class="card-panel">
+            <span class="blue-text text-darken-2">Quick Report</span>
+        </div>
+        {{#each survey}}
+            <h5 class="center-align">Survey Title : {{TITLE}}</h5>
+        {{#each QUESTIONS}}
+            <b>Question {{TEXT}}</b>
+            <!--<table>-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    {{#each casesAns  ../_id ID}}
+                        -#------#-
+                        @_@{{LAT}}
+                        {{#each Answers ../id ID}}
+                            $_$
+                    <th data-field="id">{{QUESTION_ANS}}Question Answer</th>
+                            {{else}}
+                            there is currently no Answers
+                            {{/each}}
+                    {{/each}}
+                <!--</tr>-->
+                <!--</thead>-->
 
-         <tbody>
-           {{#each surveys}}
-           <tr>
-               <td>
-                   <a href="{{_id}}">details</a>
-               </td>
-               <td>{{TITLE}}</td>
-               <td>{{DESCRIPTION}}</td>
-               <td>{{AUTHOR}}</td>
-           </tr>
-           {{/each}}
-         </tbody>
-       </table>
-  </div>
-  <!-- ######################################################  -->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<td>Alvin</td>-->
+                    <!--<td>Eclair</td>-->
+                    <!--<td>$0.87</td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+        {{/each}}
+            <hr/>
+            <!--###########################################-->
 
-  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a  id="print" class="btn-floating btn-large waves-effect  pink"><i class="material-icons">print</i></a>
-  </div>
+        {{/each}}
+    </div>
 </template>
