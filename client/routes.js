@@ -8,7 +8,11 @@ Router.configure({
 });
 Router.route("/", function(){
   this.layout("MainLayout");
+<<<<<<< HEAD
   //this.render("header", {to: "header"});
+=======
+  this.render("header", {to: "header"});
+>>>>>>> b7e6627667f1c529a28f98fc9b6c4633aac88abb
   this.render("sidebar", {to: "aside"});
   this.render("main");
   this.render("footer", {to: "footer"});
@@ -41,6 +45,7 @@ Router.route("/reports", function(){
   this.render("sidebar", {to: "aside"});
   this.render("reports");
   this.render("footer", {to: "footer"});
+<<<<<<< HEAD
 },{data: function () {
   return Survey.find({});}
 });
@@ -70,6 +75,9 @@ Router.route("/survey/:id",function () {
 //  this.render("detailedReport");
 //  this.render("footer", {to: "footer"});
 //});
+=======
+});
+>>>>>>> b7e6627667f1c529a28f98fc9b6c4633aac88abb
 Router.route("/testcases", function(){
   this.layout("MainLayout");
   this.render("header", {to: "header"});

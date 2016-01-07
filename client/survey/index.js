@@ -17,7 +17,10 @@ Template.SurveyList.helpers({
     Meteor.subscribe('SurveyList')
     return Survey.find().fetch();
   },
+<<<<<<< HEAD
 
+=======
+>>>>>>> b7e6627667f1c529a28f98fc9b6c4633aac88abb
   selectedSurvey:function () {
     // body...
     // return Survey.findOne({_id: this._id});
@@ -30,24 +33,42 @@ Template.SurveyList.selectedSurvey = function () {
 }
 
 Template.SurveyList.events({
+<<<<<<< HEAD
   //"click #button": function(){
     //Survey.insert({title: "my first survey", author: "Mohammed Matar", description: "la la"}, function(error, result) {
+=======
+  "click #button": function(){
+    Survey.insert({title: "my first survey", author: "Mohammed Matar", description: "la la"}, function(error, result) {
+>>>>>>> b7e6627667f1c529a28f98fc9b6c4633aac88abb
       //The insert will fail, error will be set,
       //and result will be undefined or false because "copies" is required.
       //
       //The list of errors is available on `error.invalidKeys` or by calling Books.simpleSchema().namedContext().invalidKeys()
+<<<<<<< HEAD
     //});
   //},
   //"click .survey-to-update": function (e) {
   //   body...
     //e.preventDefault(e);
     //var id = e.currentTarget.name;
+=======
+    });
+  },
+  "click .survey-to-update": function (e) {
+    // body...
+    e.preventDefault(e);
+    var id = e.currentTarget.name;
+>>>>>>> b7e6627667f1c529a28f98fc9b6c4633aac88abb
 
     // selectedSurvey(id);
     // console.log("#######"+this._id);
     // Session.set("selectedSurvey", this._id);
     // $('#modal1').openModal();
+<<<<<<< HEAD
   //},
+=======
+  },
+>>>>>>> b7e6627667f1c529a28f98fc9b6c4633aac88abb
   "click #delete-survey": function (e) {
     e.preventDefault(e);
     // Survey.delete({_id: id});
