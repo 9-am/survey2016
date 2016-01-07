@@ -15,8 +15,11 @@ Meteor.publish("CasesList", function () {
 Meteor.publish("CasesAnsList", function (surveyId, questionId) {
    return Cases.find({SURVEY_ID: surveyId, QUESTION_ID: questionId});
 });
-Meteor.publish("Answers", function () {
-    return Cases.find({});
+Meteor.publish("Answers", function (questionId) {
+    return Cases.find({"ANSWERS.QUESTION_ID": questionId});
+});
+Meteor.publish("AnswersLikeCount", function (ans) {
+    return Cases.find({"ANSWERS.QUESTION_ANS": ans});
 });
 Meteor.publish('allSurvey', function () {
     //var currentUserId = this.userId();

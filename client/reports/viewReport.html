@@ -1,0 +1,48 @@
+<template name="viewReport">
+    <div class="container row">
+        <div class="col s8 push-s2">
+            <ul class="collection ">
+                <li class="collection-item avatar " name="">
+                    <a href="/survey/{{_id}}"> <span class="title">Title: {{TITLE}}</span></a>
+                    <br/>
+                    <p>Desc: {{DESCRIPTION}}</p>
+                </li>
+                <h5 class="center-align">Quick Report</h5>
+                <li class="collection-item avatar survey-to-update" name="">
+                    <!--<a href="/survey/_id}}"> <span class="title">TITLE}}</span></a>-->
+                    {{#each QUESTIONS}}
+                        <a href="#"> <span class="title">{{TEXT}}</span></a> &ensp;&ensp;&ensp;
+                        <!--<br/>-->
+                        <p>
+
+                        <table>
+                            <thead>
+                            <tr>
+                                <th data-field="ANS">Answers</th>
+                                <th data-field="Count">Count</th>
+                            </tr>
+                            </thead>
+                        <tbody>
+                            <!--each answers ID}}-->
+                                <!--#each QUESTIONS}}-->
+                            {{#each ANSWERS}}
+                                    <tr class="table-data">
+                                        <td class="answer">{{this}}</td>
+                                        <td class="answer-count">{{answersLike this}}</td>
+                                    </tr>
+
+                            {{/each}}
+                                <!--/each}}-->
+                            <!--/each}}-->
+                        </tbody>
+                        </table>
+                        </p>
+                        <hr/>
+                    <!--chart this-->
+                        <hr/>
+                    {{/each}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>

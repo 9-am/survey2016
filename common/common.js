@@ -40,7 +40,7 @@ Schemas.Survey = new SimpleSchema({
       }
     }//function
   },
-  "QUESTIONS.$.TEXT":     {
+  "QUESTIONS.$.TEXT":  {
     type: String,
     label:  "text"
   },

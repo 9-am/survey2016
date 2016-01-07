@@ -1,8 +1,12 @@
 /**
  * Created by esdeath on 1/5/16.
  */
-Template.main.rendered = function () {
+Template.main.onRendered(function () {
+    //$(document).ready(function(){
+    //    $('.carousel').carousel();
+    //});
     $(document).ready(function(){
-        $('.carousel').carousel();
+        $('.slider').slider({full_width: true});
     });
-}
+
+});

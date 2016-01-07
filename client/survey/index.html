@@ -10,11 +10,10 @@
     <!--#if TEST_DATE surveys.EXP_DATE}}-->
       <li class="collection-item avatar survey-to-update" name="{{_id}}">
            <i class="material-icons circle green">question_answer</i>
-           <span class="title">{{TITLE}}</span>
+           <a href="/survey/{{_id}}"> <span class="title">{{TITLE}}</span></a>
           <br/>
              <p>{{DESCRIPTION}}</p>
            <a href="#!" id="delete-survey" name="{{_id}}" class="secondary-content"><i class="material-icons">delete</i></a>
-
       </li>
         <!--/if}}-->
 {{/each}}

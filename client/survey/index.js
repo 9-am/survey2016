@@ -30,24 +30,24 @@ Template.SurveyList.selectedSurvey = function () {
 }
 
 Template.SurveyList.events({
-  "click #button": function(){
-    Survey.insert({title: "my first survey", author: "Mohammed Matar", description: "la la"}, function(error, result) {
+  //"click #button": function(){
+    //Survey.insert({title: "my first survey", author: "Mohammed Matar", description: "la la"}, function(error, result) {
       //The insert will fail, error will be set,
       //and result will be undefined or false because "copies" is required.
       //
       //The list of errors is available on `error.invalidKeys` or by calling Books.simpleSchema().namedContext().invalidKeys()
-    });
-  },
-  "click .survey-to-update": function (e) {
-    // body...
-    e.preventDefault(e);
-    var id = e.currentTarget.name;
+    //});
+  //},
+  //"click .survey-to-update": function (e) {
+  //   body...
+    //e.preventDefault(e);
+    //var id = e.currentTarget.name;
 
     // selectedSurvey(id);
     // console.log("#######"+this._id);
     // Session.set("selectedSurvey", this._id);
     // $('#modal1').openModal();
-  },
+  //},
   "click #delete-survey": function (e) {
     e.preventDefault(e);
     // Survey.delete({_id: id});

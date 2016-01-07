@@ -8,7 +8,7 @@ Router.configure({
 });
 Router.route("/", function(){
   this.layout("MainLayout");
-  this.render("header", {to: "header"});
+  //this.render("header", {to: "header"});
   this.render("sidebar", {to: "aside"});
   this.render("main");
   this.render("footer", {to: "footer"});
@@ -41,6 +41,27 @@ Router.route("/reports", function(){
   this.render("sidebar", {to: "aside"});
   this.render("reports");
   this.render("footer", {to: "footer"});
+},{data: function () {
+  return Survey.find({});}
+});
+Router.route("/reports/:id", function(){
+  this.layout("MainLayout");
+  this.render("header", {to: "header"});
+  this.render("sidebar", {to: "aside"});
+  this.render("viewReport");
+  this.render("footer", {to: "footer"});
+},{data: function () {
+  return Survey.findOne({_id: this.params.id});}
+});
+Router.route("/survey/:id",function () {
+  this.layout("MainLayout");
+  this.render("header", {to: "header"});
+  this.render("sidebar", {to: "aside"});
+  this.render("viewSurvey");
+  this.render("footer", {to: "footer"});
+
+},{data: function () {
+  return Survey.findOne({_id: this.params.id});}
 });
 //Router.route("/reports/:survey", {name: "detailedReport",data: function(){var v = Cases.findOne({SURVEY_ID: this.params._id}); return v;}}, function(){
 //  this.layout("MainLayout");
